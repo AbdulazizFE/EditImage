@@ -18,7 +18,7 @@ const context = canvas.getContext("2d");
 
 //when u upload a new img
 function resetValue() {
- 
+ img.filter = "none";
   saturate.value = "100";
   contrast.value = "100";
   brightness.value = "100";
@@ -45,7 +45,7 @@ upload.onchange = function () {
   let file = new FileReader();
   file.readAsDataURL(upload.files[0]);
   file.onload = function () {
-    img.src = file.result;
+  img.src = file.result;
   };
 
   //To downlod the image with the filters,
@@ -54,7 +54,7 @@ upload.onchange = function () {
     canvas.width = img.width;
     canvas.height = img.height;
     context.drawImage(img, 0, 0, canvas.width, canvas.height);
-    img.style.display = "none";
+   img.style.display = "none";
   };
 };
 

@@ -7,9 +7,28 @@
 
 body {
     background: #333;
+    font-size: 1rem;
 
 }
 
+
+.header{
+    text-align: center;
+    
+}
+
+.header h1{
+    padding: 10px;
+    color: #7DE5ED;
+    
+}
+
+.header p{
+font-size: 25px;
+color:#ffff;
+
+    
+}
 .container {
     background: #222;
     width: 80vw;
@@ -85,7 +104,7 @@ footer{
     text-align: center;
     padding: 10px;
     border-bottom: 1px solid orange;
-    width: 30%;
+    width: 8%;
     margin: 10px auto;
     color: #ffff;
 }
@@ -101,6 +120,13 @@ footer{
 
     footer{
         font-size: 1rem;
-        width: 70%;
+        width: 25%;
+        text-align: center;
+        
+    }
+
+    .header p{
+        font-size: 17px;
+        margin: auto;
     }
 }
