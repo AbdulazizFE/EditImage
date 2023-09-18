@@ -99,3 +99,8 @@ if (isTouchDevice) {
     filter.addEventListener("input", handleInput);
   });
 }
+// Add input event listeners for filter adjustments (both mouse and touch events)
+filters.forEach((filter) => {
+  filter.addEventListener("input", applyFilters);
+  filter.addEventListener("touchmove", applyFilters);
+});
