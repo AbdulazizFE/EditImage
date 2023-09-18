@@ -13,6 +13,10 @@ let img = document.getElementById("img");
 let reset = document.querySelector("span");
 let imgBox = document.querySelector(".img-box");
 
+// Detect touch support
+let isTouchDevice = 'ontouchstart' in window || navigator.msMaxTouchPoints;
+
+
 const canvas = document.getElementById("canvas");
 const context = canvas.getContext("2d");
 
@@ -78,3 +82,20 @@ filters.forEach((filter) => {
 download.onclick = function () {
   download.href = canvas.toDataURL();
 };
+
+
+// Function to handle input events (used for both mouse and touch events)
+function handleInput() {
+  applyFilters();
+}
+
+// Add event listeners for both input and touch events
+if (isTouchDevice) {
+  filters.forEach((filter) => {
+    filter.addEventListener("touchmove", handleInput);
+  });
+} else {
+  filters.forEach((filter) => {
+    filter.addEventListener("input", handleInput);
+  });
+}
